@@ -32,7 +32,7 @@ To compile it, execute: `gcc -o hello.out hello.c`, and to run: `./hello`. Note 
 
 ## SizeOf
 
-The file [sizeof.c](./sizeof.c), when executed shows the size in byte of each C primitive, as well as important constants holding minimum and maximum values for each primitive.
+The file [sizeof.c](./sizeof.c), when executed shows the size in byte of various C primitive, as well as important constants holding minimum and maximum values for each primitive.
 
 # References
 
