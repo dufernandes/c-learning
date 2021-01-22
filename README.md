@@ -38,4 +38,5 @@ The file [sizeof.c](./sizeof.c), when executed shows the size in byte of various
 
 - C programming tutorial - https://linuxconfig.org/c-programming-tutorial
 - Learn C programming, simply easy learning - https://www.tutorialspoint.com/cprogramming/index.htm
+- Difference between #define and const - https://stackoverflow.com/questions/6442328/what-is-the-difference-between-define-and-const/6442420#:~:text=The%20difference%20is%20that%20%23define,well%20not%20really%20that%20variable).
 
