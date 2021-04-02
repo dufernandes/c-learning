@@ -28,6 +28,18 @@ Each topic below is the execution of a certain file with things to learn for C p
 
 The first file, [hello.c](./hello.c) is the simples "Hello World" possible, thus no explanation is needed.
 
+```c
+#include <stdio.h>
+
+int main()
+{
+    /* Here is my comment */
+    printf("Hellow, World!\n");
+    return 0;
+}
+
+```
+
 To compile it, execute: `gcc -o hello.out hello.c`, and to run: `./hello`. Note that this follows the explanation in the session [Compiling and running the code](#compiling-and-running-the-code)
 
 ## SizeOf
