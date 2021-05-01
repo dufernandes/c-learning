@@ -1,8 +1,17 @@
-# c-learning
+# C Learning notes
 
 I haven't worked with C for more than a decade. It is a language I always would liked have developed professionally, but destiny has taken me in other directions. 
 
 Now, I decided to revisit C, and here is, if you will, my notes about the it. The idea is not to provide a comprehensive material of the language, but instead to have some notes while I revise it. Hopefully, this material will be useful for someone else.
+
+- [C Learning notes](#c-learning-notes)
+- [Learning and coding](#learning-and-coding)
+  - [Compiling and running the code](#compiling-and-running-the-code)
+  - [Hello World](#hello-world)
+  - [SizeOf](#sizeof)
+  - [Defining constants](#defining-constants)
+    - [Difference between #define and const](#difference-between-define-and-const)
+- [References](#references)
 
 # Learning and coding
 
@@ -85,9 +94,64 @@ int main()
 }
 ```
 
+## Defining constants
+
+There are two ways of defining constants, either use the `#include` keyword, or the `const` one. The file [constants_using_define.c](./constants_using_define.c) shows how to the `#define` element, and the file: [constants_using_const.c](./constants_using_const.c) shows the usage of `const`.
+
+Here is the example using `#define`:
+
+```c
+#include <stdio.h>
+
+// constants using the #define keyword
+#define LENGTH 10
+#define WIDTH 5
+#define NEWLINE '\n'
+
+int main()
+{
+    // calculate area using constants
+    int area = LENGTH * WIDTH;
+    printf("value of area : %d", area);
+    // use the NEWLINE constant for printing going to the next line
+    printf("%c", NEWLINE);
+
+    return 0;
+}
+```
+
+And here is the example using `const`:
+
+```c
+#include <stdio.h>
+
+// constants using the const keyword
+const int LENGTH = 10;
+const int WIDTH = 5;
+const char NEWLINE = '\n';
+
+int main()
+{
+    // calculate area using constants
+    int area = LENGTH * WIDTH;
+    printf("value of area : %d", area);
+    // use the NEWLINE constant for printing going to the next line
+    printf("%c", NEWLINE);
+
+    return 0;
+}
+```
+
+### Difference between #define and const
+
+Here is a nice explanation taken from [stackoverflow](https://stackoverflow.com/questions/6442328/what-is-the-difference-between-define-and-const#:~:text=The%20difference%20is%20that%20%23define,well%20not%20really%20that%20variable).):
+
+>The difference is that #define is processed by the preprocessor doing what amounts to simple text replacement. Const values defined like this are not visible for the actual compiler, while a variable defined with the const modifier is an actual typed "variable" (well not really that variable). The disadvantage of #define is that is replaces every occurence of the name, while const variables get normal lookup, so you have less risk of naming conflicts and it's not typesafe.
+>The advantage of #define is that it guarantees constness and therefore there will be no backing variable. Const Variables may or may not be substituted into the code, so #define might be faster in some situations. However a good compiler should inline those consts anyways and it's unlikely to make much of a difference in most situations, so I would keep using const unless you have a piece of code where you have seen that the compiler hasn't inlined the variable and it is very, very performance critical code.
+
 # References
 
 - C programming tutorial - https://linuxconfig.org/c-programming-tutorial
 - Learn C programming, simply easy learning - https://www.tutorialspoint.com/cprogramming/index.htm
-- Difference between #define and const - https://stackoverflow.com/questions/6442328/what-is-the-difference-between-define-and-const/6442420#:~:text=The%20difference%20is%20that%20%23define,well%20not%20really%20that%20variable).
+- Difference between #define and const - https://stackoverflow.com/questions/6442328/what-is-the-difference-between-define-and-const#:~:text=The%20difference%20is%20that%20%23define,well%20not%20really%20that%20variable).
 
