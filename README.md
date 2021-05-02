@@ -8,6 +8,7 @@ Now, I decided to revisit C, and here is, if you will, my notes about the it. Th
 - [Learning and coding](#learning-and-coding)
   - [Compiling and running the code](#compiling-and-running-the-code)
   - [Hello World](#hello-world)
+  - [Variables](#variables)
   - [SizeOf](#sizeof)
   - [Defining constants](#defining-constants)
     - [Difference between #define and const](#difference-between-define-and-const)
@@ -50,6 +51,40 @@ int main()
 ```
 
 To compile it, execute: `gcc -o hello.out hello.c`, and to run: `./hello`. Note that this follows the explanation in the session [Compiling and running the code](#compiling-and-running-the-code)
+
+## Variables
+
+Declaring variables is simple enough. You set the type, the variable name and optionally the value i the same line. You can declare a variable in one line, and set the value in the other. The file [variables.c](./variables.c) shows how to do so, and its code can be found below:
+
+```c
+#include <stdio.h>
+
+// Variable declaration - extern means the variable is declared and and can be used in multiple files. A nice explanation can be found here: https://stackoverflow.com/a/1433387/3498015:
+extern int a, b;
+extern int c;
+extern float f;
+
+int main()
+{
+
+    /* variable definition: */
+    int a, b;
+    float f;
+
+    /* actual initialization */
+    a = 10;
+    b = 20;
+
+    // variable can be declared and have a value assinged in the same expression
+    int c = a + b;
+    printf("value of c : %d \n", c);
+
+    f = 70.0 / 3.0;
+    printf("value of f : %f \n", f);
+
+    return 0;
+}
+```
 
 ## SizeOf
 
@@ -166,4 +201,5 @@ Here is a nice explanation taken from [stackoverflow](https://stackoverflow.com/
 - C programming tutorial - https://linuxconfig.org/c-programming-tutorial
 - Learn C programming, simply easy learning - https://www.tutorialspoint.com/cprogramming/index.htm
 - Difference between #define and const - https://stackoverflow.com/questions/6442328/what-is-the-difference-between-define-and-const#:~:text=The%20difference%20is%20that%20%23define,well%20not%20really%20that%20variable).
+- Extern variables in C - https://stackoverflow.com/a/1433387/3498015
 
