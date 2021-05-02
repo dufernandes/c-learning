@@ -53,11 +53,12 @@ To compile it, execute: `gcc -o hello.out hello.c`, and to run: `./hello`. Note 
 
 ## SizeOf
 
-The file [sizeof.c](./sizeof.c), when executed shows the size in byte of various C primitive, as well as important constants holding minimum and maximum values for each primitive. Check it out:
+The file [sizeof.c](./sizeof.c), when executed shows the size in byte of various C primitives, as well as important constants holding minimum and maximum values for each primitive. Check it out:
 
 ```c
 #include <stdio.h>
 #include <limits.h>
+#include <float.h>
 
 int main() 
 {
@@ -72,10 +73,7 @@ int main()
     printf("Storage size for long : %ld \n", sizeof(long));
     printf("Storage size for unsigned long : %ld \n", sizeof(unsigned long));
 
-    printf("\nStorage size for floating points:\n");
-    printf("Storage size for float : %ld \n", sizeof(float));
-
-    printf("\nMax and min sizes for all types:\n");
+    printf("\nMax and min sizes for integer types:\n");
     printf("CHAR_BIT    :   %d\n", CHAR_BIT);
     printf("CHAR_MAX    :   %d\n", CHAR_MAX);
     printf("CHAR_MIN    :   %d\n", CHAR_MIN);
@@ -91,6 +89,20 @@ int main()
     printf("UINT_MAX    :   %u\n", (unsigned int) UINT_MAX);
     printf("ULONG_MAX   :   %lu\n", (unsigned long) ULONG_MAX);
     printf("USHRT_MAX   :   %d\n", (unsigned short) USHRT_MAX);
+
+    printf("\nStorage size for floating points:\n");
+    printf("Storage size for float : %ld \n", sizeof(float));
+    printf("Storage size for double : %ld \n", sizeof(double));
+
+    printf("Max and min sizes for float and doubles:\n");
+    printf("FLT_MAX     :   %g\n", (float) FLT_MAX);
+    printf("FLT_MIN     :   %g\n", (float) FLT_MIN);
+    printf("-FLT_MAX    :   %g\n", (float) -FLT_MAX);
+    printf("-FLT_MIN    :   %g\n", (float) -FLT_MIN);
+    printf("DBL_MAX     :   %g\n", (double) DBL_MAX);
+    printf("DBL_MIN     :   %g\n", (double) DBL_MIN);
+    printf("-DBL_MAX     :  %g\n", (double) -DBL_MAX);
+    printf("Precision value: %d\n", FLT_DIG );
 }
 ```
 
